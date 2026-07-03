@@ -74,14 +74,20 @@
 
 <div align="center" style="margin-top: 20px;">
   <h2 style="color: #ffffff; margin-bottom: 10px;">📞 للتواصل</h2>
-  <p style="color: #eeeeee; font-size: 18px; line-height: 1.8; margin-bottom: 20px;">
+  <p style="color: #eeeeee; font-size: 18px; line-height: 1.8; margin-bottom: 25px;">
     <b dir="ltr">0572469285</b><br>
     <a href="mailto:majedxalomrani@gmail.com" style="color: #eeeeee; text-decoration: none;">majedxalomrani@gmail.com</a>
   </p>
   
-  <a href="https://wa.me/0572469285" target="_blank" style="text-decoration: none;">
-    <img src="https://img.shields.io/badge/للتواصل_المباشر-25D366?style=flat-square&logo=whatsapp&logoColor=white" alt="للتواصل المباشر" style="height: 45px; border-radius: 4px;" />
-  </a>
+  <table align="center" style="border: none; background-color: transparent;">
+    <tr>
+      <td align="center" style="background-color: #25D366; border-radius: 8px; padding: 12px 25px; border: none;">
+        <a href="https://wa.me/0572469285" target="_blank" style="color: #ffffff; text-decoration: none; font-size: 18px; font-weight: bold;">
+          💬 للتواصل المباشر
+        </a>
+      </td>
+    </tr>
+  </table>
 </div>
 
 </div>
