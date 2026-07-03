@@ -52,16 +52,22 @@
 <br><hr style="border: 0; border-top: 1px solid #222;"><br>
 
 <h2 style="color: #ffffff; margin-bottom: 20px;">🎬 أعمالي المرئية</h2>
-<p align="center">
-  <video width="32%" controls title="" src="https://github.com/user-attachments/assets/c245f1df-25f2-44dd-bc40-d960bedb1e35"></video>
-  <video width="32%" controls title="" src="https://github.com/user-attachments/assets/1e49344e-9d24-4fe7-8100-75ca82aa8407"></video>
-  <video width="32%" controls title="" src="https://github.com/user-attachments/assets/babeba2b-3f64-4b67-84da-7a9f20e95676"></video>
-  <video width="32%" controls title="" src="https://github.com/user-attachments/assets/a4048877-05bd-4146-a73d-b76d60ff4ef2"></video>
-  <video width="32%" controls title="" src="https://github.com/user-attachments/assets/416ecf38-1cbc-4e17-9c26-b054fbfdb49d"></video>
-  <video width="32%" controls title="" src="https://github.com/user-attachments/assets/03cca5b5-fb8c-4342-9458-5f35abf4ccd2"></video>
-  <video width="32%" controls title="" src="https://github.com/user-attachments/assets/cce744c8-0819-43c6-91c8-69b679461c64"></video>
-  <video width="32%" controls title="" src="https://github.com/user-attachments/assets/ae8541b3-041e-4b1f-a061-ab7d9042ee12"></video>
-</p>
+<table width="100%" style="border: none; background-color: transparent;">
+  <tr>
+    <td width="33%" align="center" valign="top"><video width="100%" controls title="" src="https://github.com/user-attachments/assets/c245f1df-25f2-44dd-bc40-d960bedb1e35"></video></td>
+    <td width="33%" align="center" valign="top"><video width="100%" controls title="" src="https://github.com/user-attachments/assets/1e49344e-9d24-4fe7-8100-75ca82aa8407"></video></td>
+    <td width="33%" align="center" valign="top"><video width="100%" controls title="" src="https://github.com/user-attachments/assets/babeba2b-3f64-4b67-84da-7a9f20e95676"></video></td>
+  </tr>
+  <tr>
+    <td width="33%" align="center" valign="top"><video width="100%" controls title="" src="https://github.com/user-attachments/assets/a4048877-05bd-4146-a73d-b76d60ff4ef2"></video></td>
+    <td width="33%" align="center" valign="top"><video width="100%" controls title="" src="https://github.com/user-attachments/assets/416ecf38-1cbc-4e17-9c26-b054fbfdb49d"></video></td>
+    <td width="33%" align="center" valign="top"><video width="100%" controls title="" src="https://github.com/user-attachments/assets/03cca5b5-fb8c-4342-9458-5f35abf4ccd2"></video></td>
+  </tr>
+  <tr>
+    <td width="33%" align="center" valign="top"><video width="100%" controls title="" src="https://github.com/user-attachments/assets/cce744c8-0819-43c6-91c8-69b679461c64"></video></td>
+    <td width="33%" align="center" valign="top"><video width="100%" controls title="" src="https://github.com/user-attachments/assets/ae8541b3-041e-4b1f-a061-ab7d9042ee12"></video></td>
+    <td width="33%" align="center" valign="top"></td> </tr>
+</table>
 
 <br><hr style="border: 0; border-top: 1px solid #222;"><br>
 
