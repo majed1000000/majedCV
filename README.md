@@ -66,12 +66,19 @@
   <tr>
     <td width="33%" align="center" valign="top"><video width="100%" controls title="" src="https://github.com/user-attachments/assets/cce744c8-0819-43c6-91c8-69b679461c64"></video></td>
     <td width="33%" align="center" valign="top"><video width="100%" controls title="" src="https://github.com/user-attachments/assets/ae8541b3-041e-4b1f-a061-ab7d9042ee12"></video></td>
-    <td width="33%" align="center" valign="top"></td> </tr>
+    <td width="33%" align="center" valign="top"></td>
+  </tr>
 </table>
 
 <br><hr style="border: 0; border-top: 1px solid #222;"><br>
 
 <div align="center" style="margin-top: 20px;">
+  <h2 style="color: #ffffff; margin-bottom: 10px;">📞 للتواصل</h2>
+  <p style="color: #eeeeee; font-size: 18px; line-height: 1.8; margin-bottom: 20px;">
+    <b dir="ltr">0572469285</b><br>
+    <a href="mailto:majedxalomrani@gmail.com" style="color: #eeeeee; text-decoration: none;">majedxalomrani@gmail.com</a>
+  </p>
+  
   <a href="https://wa.me/0572469285" target="_blank" style="text-decoration: none;">
     <img src="https://img.shields.io/badge/للتواصل_المباشر-25D366?style=flat-square&logo=whatsapp&logoColor=white" alt="للتواصل المباشر" style="height: 45px; border-radius: 4px;" />
   </a>
