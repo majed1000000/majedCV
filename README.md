@@ -72,6 +72,20 @@
 
 <br><hr style="border: 0; border-top: 1px solid #222;"><br>
 
+<h2 style="color: #ffffff; margin-bottom: 20px;">💻 تصاميم المواقع الإلكترونية</h2>
+<p align="center">
+  <img width="49%" alt="" src="https://github.com/user-attachments/assets/bbd363c9-2a91-4c68-9394-1ff42af4f93f" />
+  <img width="49%" alt="" src="https://github.com/user-attachments/assets/0ae16154-bfec-43ce-8796-af6c59c5bb63" />
+  <img width="49%" alt="" src="https://github.com/user-attachments/assets/f432e4e0-f827-438c-9b3d-1dfaef6e8c51" />
+  <img width="49%" alt="" src="https://github.com/user-attachments/assets/e88570cb-d0eb-4cec-a8ee-1ceae5055aa7" />
+  <img width="49%" alt="" src="https://github.com/user-attachments/assets/bd3873da-846d-4ffa-8892-e72efafc3692" />
+  <img width="49%" alt="" src="https://github.com/user-attachments/assets/917192ef-ec43-407f-86c6-9520a75fbcfe" />
+  <img width="49%" alt="" src="https://github.com/user-attachments/assets/56a6655b-fbce-46e2-8350-23fedfaa88ec" />
+  <img width="49%" alt="" src="https://github.com/user-attachments/assets/4bc84c50-092a-43f3-bf24-7969bcb4a47c" />
+</p>
+
+<br><hr style="border: 0; border-top: 1px solid #222;"><br>
+
 <div align="center" style="margin-top: 20px;">
   <h2 style="color: #ffffff; margin-bottom: 10px;">📞 للتواصل</h2>
   <p style="color: #eeeeee; font-size: 18px; line-height: 1.8; margin-bottom: 25px;">
