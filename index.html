@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الملف الشخصي</title>
+  <meta name="description" content="ملف شخصي عربي بتصميم بصري سينمائي وحركة سلسة." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --خلفية: #090c14;
+      --لوحة: #0f1524;
+      --سطح: #131d31;
+      --نص: #f3f6ff;
+      --نص-هادئ: #a9b4d1;
+      --حدود: rgba(205, 219, 255, 0.14);
+      --توهج: #7ba7ff;
+      --توهج-ثان: #7cf0d2;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Cairo", "Segoe UI", Tahoma, sans-serif;
+      color: var(--نص);
+      background:
+        radial-gradient(circle at 20% -10%, rgba(124, 240, 210, 0.18), transparent 45%),
+        radial-gradient(circle at 80% 0%, rgba(123, 167, 255, 0.2), transparent 40%),
+        var(--خلفية);
+      min-height: 100vh;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    .وهج-خلفي {
+      position: fixed;
+      inset: -20% auto auto -10%;
+      width: 540px;
+      height: 540px;
+      background: radial-gradient(circle, rgba(123, 167, 255, 0.22), transparent 65%);
+      filter: blur(6px);
+      pointer-events: none;
+      animation: تنفس 8s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    .حاوية {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    .شريط {
+      position: sticky;
+      top: 1rem;
+      z-index: 20;
+      padding: 0 1rem;
+      display: flex;
+      justify-content: center;
+      background: transparent;
+      border: none;
+    }
+
+    .شريط-داخلي {
+      width: fit-content;
+      max-width: min(100%, 920px);
+      min-height: 56px;
+      margin: 0 auto;
+      padding: 0.45rem 0.7rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      border: 1px solid var(--حدود);
+      border-radius: 999px;
+      background: rgba(9, 12, 20, 0.78);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 10px 34px rgba(0, 0, 0, 0.28);
+    }
+
+    .روابط {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .روابط::-webkit-scrollbar {
+      display: none;
+    }
+
+    .رابط {
+      color: var(--نص-هادئ);
+      text-decoration: none;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: 0.45rem 0.9rem;
+      transition: 0.25s ease;
+    }
+
+    .رابط:hover {
+      color: var(--نص);
+      border-color: var(--حدود);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .بطل {
+      padding: 5.2rem 0 2.2rem;
+      display: grid;
+      gap: 1rem;
+      max-width: 820px;
+    }
+
+    .شارة {
+      justify-self: start;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #d7e3ff;
+      border: 1px solid var(--حدود);
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 999px;
+      padding: 0.4rem 0.75rem;
+      letter-spacing: 0.2px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 6vw, 3.6rem);
+      line-height: 1.2;
+      max-width: 900px;
+      text-wrap: balance;
+      font-weight: 800;
+      margin-top: 0.1rem;
+    }
+
+    .عنوان-فرعي {
+      color: #dce6ff;
+      font-size: clamp(1.05rem, 2vw, 1.28rem);
+      font-weight: 600;
+      line-height: 1.6;
+      max-width: 700px;
+    }
+
+    .وصف-بطل {
+      color: var(--نص-هادئ);
+      max-width: 700px;
+      font-size: clamp(0.98rem, 1.2vw, 1.08rem);
+      line-height: 1.85;
+    }
+
+    .نص-مساعد {
+      color: #9facc9;
+      font-size: 0.9rem;
+      max-width: 700px;
+      line-height: 1.7;
+    }
+
+    .تخصصات-بطل {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.15rem;
+    }
+
+    .تخصصات-بطل span {
+      font-size: 0.82rem;
+      color: #d2dcf8;
+      border: 1px solid var(--حدود);
+      border-radius: 999px;
+      padding: 0.32rem 0.7rem;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .بيانات-تواصل {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      max-width: 760px;
+      width: 100%;
+      margin-top: 0.35rem;
+    }
+
+    .عنصر-تواصل {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+      min-height: 78px;
+      border: 1px solid var(--حدود);
+      border-radius: 12px;
+      padding: 0.8rem 1rem;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .تسمية-تواصل {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--نص-هادئ);
+      margin-bottom: 0.35rem;
+      letter-spacing: 0.2px;
+      line-height: 1.3;
+    }
+
+    .قيمة-تواصل {
+      display: block;
+      width: 100%;
+      color: #e8efff;
+      font-weight: 600;
+      font-size: 0.96rem;
+      line-height: 1.45;
+      text-align: start;
+    }
+
+    .رابط-تواصل {
+      text-decoration: none;
+      transition: color 0.2s ease;
+      direction: ltr;
+      unicode-bidi: isolate;
+      text-align: end;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0.4px;
+    }
+
+    .رابط-تواصل:hover {
+      color: var(--توهج-ثان);
+    }
+
+    .أزرار {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 0.6rem;
+    }
+
+    .زر {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0.7rem 1.1rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid transparent;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    }
+
+    .زر-أساسي {
+      background: linear-gradient(135deg, var(--توهج), var(--توهج-ثان));
+      color: #08101f;
+      box-shadow: 0 6px 30px rgba(124, 240, 210, 0.25);
+    }
+
+    .زر-أساسي:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 36px rgba(124, 240, 210, 0.33);
+    }
+
+    .زر-ثانوي {
+      color: var(--نص);
+      border-color: var(--حدود);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .زر-ثانوي:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .زر-واتساب {
+      background: linear-gradient(135deg, #25d366, #1ebe5b);
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.18);
+      box-shadow: 0 10px 26px rgba(37, 211, 102, 0.3);
+      min-width: 220px;
+    }
+
+    .زر-واتساب:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(37, 211, 102, 0.38);
+      filter: saturate(1.05);
+    }
+
+    .واتساب-عائم {
+      position: fixed;
+      left: 1.25rem;
+      bottom: 1.25rem;
+      z-index: 50;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #25d366, #1ebe5b);
+      color: #ffffff;
+      box-shadow: 0 10px 28px rgba(37, 211, 102, 0.38);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      text-decoration: none;
+    }
+
+    .واتساب-عائم svg {
+      width: 30px;
+      height: 30px;
+    }
+
+    .واتساب-عائم:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 14px 34px rgba(37, 211, 102, 0.48);
+    }
+
+    #التواصل .رأس-قسم {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 1.25rem;
+    }
+
+    .لوحة-تواصل {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 1.15rem;
+      border: 1px solid var(--حدود);
+      border-radius: 18px;
+      background: linear-gradient(165deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015));
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+    }
+
+    .صف-تواصل {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--حدود);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .صف-تواصل .تسمية-تواصل {
+      margin-bottom: 0;
+      flex-shrink: 0;
+      min-width: 4.5rem;
+    }
+
+    .صف-تواصل .قيمة-تواصل {
+      text-align: end;
+      width: auto;
+    }
+
+    .قسم {
+      margin: 1rem 0;
+      border: 1px solid var(--حدود);
+      border-radius: 20px;
+      padding: 1.4rem;
+      background: linear-gradient(160deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.018));
+    }
+
+    .رأس-قسم {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: clamp(1.3rem, 2vw, 1.75rem);
+    }
+
+    .محتوى-من-أنا {
+      display: grid;
+      gap: 1.1rem;
+    }
+
+    .نص-من-أنا {
+      color: var(--نص-هادئ);
+      line-height: 1.9;
+      font-size: clamp(0.98rem, 1.1vw, 1.05rem);
+      max-width: 780px;
+    }
+
+    .نقاط-من-أنا {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .نقطة-من-أنا {
+      border: 1px solid var(--حدود);
+      border-radius: 14px;
+      padding: 0.9rem 1rem;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .نقطة-من-أنا strong {
+      display: block;
+      color: #e8efff;
+      margin-bottom: 0.35rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .نقطة-من-أنا span {
+      color: var(--نص-هادئ);
+      font-size: 0.9rem;
+      line-height: 1.75;
+    }
+
+    .نص-هادئ {
+      color: var(--نص-هادئ);
+    }
+
+    .شبكة {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    }
+
+    .بطاقة {
+      border: 1px solid var(--حدود);
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--لوحة);
+      transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .بطاقة:hover {
+      transform: translateY(-4px);
+      border-color: rgba(124, 240, 210, 0.4);
+      box-shadow: 0 14px 35px rgba(10, 16, 30, 0.38);
+    }
+
+    .صورة-رمزية {
+      height: 160px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .صورة-رمزية::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 30%, rgba(9, 12, 20, 0.72) 100%);
+    }
+
+    .محتوى-بطاقة {
+      padding: 1rem;
+    }
+
+    .محتوى-بطاقة h3 {
+      margin-bottom: 0.4rem;
+      font-size: 1.08rem;
+    }
+
+    .إحصاءات {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      margin-top: 1rem;
+    }
+
+    .رقم {
+      border: 1px solid var(--حدود);
+      border-radius: 14px;
+      padding: 1rem;
+      background: var(--سطح);
+      text-align: center;
+    }
+
+    .رقم strong {
+      display: block;
+      font-size: 1.6rem;
+      line-height: 1.2;
+      margin-bottom: 0.2rem;
+      color: #dff7ff;
+    }
+
+    .سؤال {
+      border-top: 1px solid var(--حدود);
+      padding: 0.95rem 0;
+    }
+
+    .سؤال:first-of-type {
+      border-top: none;
+    }
+
+    .سؤال h3 {
+      margin-bottom: 0.35rem;
+      font-size: 1.03rem;
+      color: #e8efff;
+    }
+
+    .غلاف-المزيد {
+      display: flex;
+      justify-content: center;
+      margin-top: 1.15rem;
+    }
+
+    .زر-المزيد {
+      cursor: pointer;
+      min-width: 160px;
+      background: transparent;
+      font: inherit;
+    }
+
+    .معرض-صور:not(.موسع) > a:nth-child(n + 7) {
+      display: none;
+    }
+
+    .شبكة-فيديو:not(.موسع) > .بطاقة-فيديو:nth-child(n + 4) {
+      display: none;
+    }
+
+    .معرض-صور {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      justify-content: center;
+    }
+
+    .معرض-صور a {
+      width: min(32%, 220px);
+      min-width: 180px;
+      border: 1px solid var(--حدود);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: zoom-in;
+    }
+
+    .معرض-صور a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.28);
+    }
+
+    .معرض-صور img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .شبكة-فيديو {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      max-width: 980px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .بطاقة-فيديو {
+      border: 1px solid var(--حدود);
+      border-radius: 16px;
+      overflow: hidden;
+      background: linear-gradient(160deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015));
+      box-shadow: 0 18px 40px rgba(3, 8, 20, 0.35);
+      width: 100%;
+      min-width: 0;
+    }
+
+    .إطار-فيديو {
+      position: relative;
+      aspect-ratio: 9 / 16;
+      background:
+        radial-gradient(circle at 28% 22%, rgba(124, 240, 210, 0.22), transparent 42%),
+        radial-gradient(circle at 78% 72%, rgba(123, 167, 255, 0.26), transparent 48%),
+        linear-gradient(165deg, #1a2740 0%, #0c1220 48%, #141c2e 100%);
+      border-bottom: 1px solid var(--حدود);
+    }
+
+    .إطار-فيديو::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: 3.1rem;
+      height: 3.1rem;
+      border-radius: 50%;
+      border: 1px solid rgba(205, 219, 255, 0.28);
+      background:
+        linear-gradient(135deg, rgba(123, 167, 255, 0.28), rgba(124, 240, 210, 0.18)),
+        rgba(9, 12, 20, 0.55);
+      box-shadow: 0 10px 28px rgba(3, 8, 20, 0.35);
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+      z-index: 1;
+    }
+
+    .إطار-فيديو::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0.55rem 0 0.55rem 0.9rem;
+      border-color: transparent transparent transparent #f3f6ff;
+      transform: translateX(0.14rem);
+      z-index: 2;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .إطار-فيديو.يعمل::before,
+    .إطار-فيديو.يعمل::after {
+      opacity: 0;
+    }
+
+    .بطاقة-فيديو video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: transparent;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    .عنوان-فيديو {
+      padding: 0.7rem 0.8rem;
+      color: #d7e3ff;
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .شارة-فيديو {
+      font-size: 0.8rem;
+      color: #d7e3ff;
+      border: 1px solid var(--حدود);
+      border-radius: 999px;
+      padding: 0.18rem 0.55rem;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .تبويبات {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .زر-تبويب {
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--نص-هادئ);
+      border: 1px solid var(--حدود);
+      border-radius: 10px;
+      padding: 0.55rem 0.9rem;
+      cursor: pointer;
+      transition: 0.2s ease;
+      font: inherit;
+    }
+
+    .زر-تبويب:hover {
+      color: var(--نص);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .زر-تبويب.نشط {
+      color: #071021;
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--توهج), var(--توهج-ثان));
+      font-weight: 700;
+    }
+
+    .لوحات-تبويب {
+      border: 1px solid var(--حدود);
+      border-radius: 14px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .لوحة-تبويب {
+      display: none;
+    }
+
+    .لوحة-تبويب.نشط {
+      display: block;
+    }
+
+    .لوحة-تبويب a {
+      display: block;
+    }
+
+    .لوحة-تبويب img {
+      width: 100%;
+      display: block;
+      max-height: 620px;
+      object-fit: cover;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem 0 2.4rem;
+      color: var(--نص-هادئ);
+      font-size: 0.95rem;
+    }
+
+    .إظهار {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .إظهار.ظهر {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .عارض-صور {
+      position: fixed;
+      inset: 0;
+      z-index: 1200;
+      display: grid;
+      place-items: center;
+      padding: 1.2rem;
+      background: rgba(5, 8, 16, 0.88);
+      backdrop-filter: blur(10px);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .عارض-صور.مفتوح {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .عارض-صور img {
+      max-width: min(96vw, 1100px);
+      max-height: min(86vh, 900px);
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 12px;
+      border: 1px solid var(--حدود);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+      background: #0b101c;
+    }
+
+    .عارض-صور .زر-عارض {
+      position: absolute;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.6rem;
+      height: 2.6rem;
+      border-radius: 999px;
+      border: 1px solid var(--حدود);
+      background: rgba(15, 21, 36, 0.85);
+      color: var(--نص);
+      font-size: 1.4rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .عارض-صور .زر-عارض:hover {
+      background: rgba(123, 167, 255, 0.2);
+      transform: scale(1.05);
+    }
+
+    .عارض-صور .إغلاق-عارض {
+      top: 1rem;
+      inset-inline-start: 1rem;
+      font-size: 1.55rem;
+    }
+
+    .عارض-صور .عارض-سابق,
+    .عارض-صور .عارض-تالي {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .عارض-صور .عارض-سابق {
+      inset-inline-start: 1rem;
+    }
+
+    .عارض-صور .عارض-تالي {
+      inset-inline-end: 1rem;
+    }
+
+    body.عارض-نشط {
+      overflow: hidden;
+    }
+
+    @keyframes تنفس {
+      0%, 100% { transform: scale(1) translateY(0); }
+      50% { transform: scale(1.08) translateY(12px); }
+    }
+
+    @media (max-width: 700px) {
+      .شبكة-فيديو {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.7rem;
+      }
+
+      .شبكة-فيديو:not(.موسع) > .بطاقة-فيديو:nth-child(n + 3) {
+        display: none;
+      }
+
+      .شريط-داخلي {
+        min-height: 52px;
+        padding: 0.4rem 0.55rem;
+      }
+
+      .رابط {
+        padding: 0.4rem 0.7rem;
+        font-size: 0.9rem;
+        white-space: nowrap;
+      }
+
+      .بطل {
+        padding-top: 3.6rem;
+      }
+
+      .قسم {
+        padding: 1.1rem;
+      }
+
+      .بيانات-تواصل {
+        grid-template-columns: 1fr;
+      }
+
+      .لوحة-تواصل {
+        max-width: 100%;
+        padding: 1rem;
+      }
+
+      .صف-تواصل {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.35rem;
+      }
+
+      .صف-تواصل .قيمة-تواصل {
+        text-align: start;
+        width: 100%;
+      }
+
+      .واتساب-عائم {
+        left: 1rem;
+        bottom: 1rem;
+        width: 54px;
+        height: 54px;
+      }
+
+      .واتساب-عائم svg {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="وهج-خلفي"></div>
+
+  <header class="شريط">
+    <div class="شريط-داخلي">
+      <nav class="روابط">
+        <a class="رابط" href="#من-أنا">من أنا</a>
+        <a class="رابط" href="#تصاميم-سوشيال-ميديا">تصاميم سوشيال ميديا</a>
+        <a class="رابط" href="#تصاميم-ترويجية">تصاميم ترويجية</a>
+        <a class="رابط" href="#تصاميم-المواقع">تصاميم المواقع</a>
+        <a class="رابط" href="#تصاميم-المنتجات">تصاميم المنتجات</a>
+        <a class="رابط" href="#تصاميم-الفيديوهات">تصاميم الفيديوهات</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="حاوية">
+    <section class="بطل إظهار">
+      <p class="شارة">مصمم جرافيك | خبير مطبوعات وتصميم منتجات</p>
+      <h1>ماجد مسعد العمراني</h1>
+      <p class="عنوان-فرعي">أصنع حلولاً بصرية ترفع قيمة العلامة وتترك انطباعاً احترافياً.</p>
+      <p class="وصف-بطل">
+        خبير متخصص في السوشل ميديا، المطبوعات، الهدايا الدعائية، وتصميم المنتجات — من الفكرة إلى تنفيذ بصري متقن يخدم أهداف العمل والتسويق
+      </p>
+      <div class="تخصصات-بطل">
+        <span>سوشل ميديا</span>
+        <span>مطبوعات</span>
+        <span>هدايا دعائية</span>
+        <span>تصميم منتجات</span>
+      </div>
+    
+     
+    </section>
+
+    <section id="من-أنا" class="قسم إظهار">
+      <div class="رأس-قسم">
+        <h2>من أنا</h2>
+      
+      </div>
+      <div class="محتوى-من-أنا">
+        <p class="نص-من-أنا">
+          مصمم جرافيك ومنتجات، أمتلك رؤية إبداعية وخبرة فنية تمتد من التصميم ثنائي الأبعاد إلى عوالم التصميم ثلاثي الأبعاد. أعمل على تحويل الأفكار إلى مخرجات بصرية دقيقة تخدم العلامة التجارية وتدعم أهداف التسويق والعرض.
+        </p>
+        <p class="نص-من-أنا">
+          أواكب أحدث تقنيات الذكاء الاصطناعي في ابتكار وتطوير المحتوى البصري، مع التركيز على الجودة، الوضوح، والاتساق في كل مشروع.
+        </p>
+       
+        <div class="بيانات-تواصل">
+          <div class="عنصر-تواصل">
+            <span class="تسمية-تواصل">الموقع</span>
+            <span class="قيمة-تواصل">جدة، المملكة العربية السعودية</span>
+          </div>
+          <div class="عنصر-تواصل">
+            <span class="تسمية-تواصل">الجوال</span>
+            <a class="قيمة-تواصل رابط-تواصل" href="https://wa.me/966572469285" target="_blank" rel="noreferrer">+966 57 246 9285</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="تصاميم-سوشيال-ميديا" class="قسم إظهار">
+      <div class="رأس-قسم">
+        <h2>تصاميم سوشيال ميديا</h2>
+        <p class="نص-هادئ">محتوى بصري لمنصات التواصل</p>
+      </div>
+      <div class="معرض-صور">
+        <a href="assets/social/gpt19-40.jpg" class="عنصر-معرض"><img alt="تصاميم سوشيال ميديا 1" src="assets/social/gpt19-40.jpg" loading="lazy" /></a>
+        <a href="assets/social/gpt20-03.jpg" class="عنصر-معرض"><img alt="تصاميم سوشيال ميديا 2" src="assets/social/gpt20-03.jpg" loading="lazy" /></a>
+        <a href="assets/social/r1-02.jpg" class="عنصر-معرض"><img alt="تصاميم سوشيال ميديا 3" src="assets/social/r1-02.jpg" loading="lazy" /></a>
+        <a href="assets/social/r1-31.jpg" class="عنصر-معرض"><img alt="تصاميم سوشيال ميديا 4" src="assets/social/r1-31.jpg" loading="lazy" /></a>
+        <a href="assets/social/r2-10.jpg" class="عنصر-معرض"><img alt="تصاميم سوشيال ميديا 5" src="assets/social/r2-10.jpg" loading="lazy" /></a>
+        <a href="assets/social/r2-31.jpg" class="عنصر-معرض"><img alt="تصاميم سوشيال ميديا 6" src="assets/social/r2-31.jpg" loading="lazy" /></a>
+        <a href="assets/social/r2-33.jpg" class="عنصر-معرض"><img alt="تصاميم سوشيال ميديا 7" src="assets/social/r2-33.jpg" loading="lazy" /></a>
+        <a href="assets/social/r2-35.jpg" class="عنصر-معرض"><img alt="تصاميم سوشيال ميديا 8" src="assets/social/r2-35.jpg" loading="lazy" /></a>
+        <a href="assets/social/r2-37.jpg" class="عنصر-معرض"><img alt="تصاميم سوشيال ميديا 9" src="assets/social/r2-37.jpg" loading="lazy" /></a>
+        <a href="assets/social/r3-04.jpg" class="عنصر-معرض"><img alt="تصاميم سوشيال ميديا 10" src="assets/social/r3-04.jpg" loading="lazy" /></a>
+        <a href="assets/social/r3-11.jpg" class="عنصر-معرض"><img alt="تصاميم سوشيال ميديا 11" src="assets/social/r3-11.jpg" loading="lazy" /></a>
+        <a href="assets/social/r3-31.jpg" class="عنصر-معرض"><img alt="تصاميم سوشيال ميديا 12" src="assets/social/r3-31.jpg" loading="lazy" /></a>
+        <a href="assets/social/s2-28.jpg" class="عنصر-معرض"><img alt="تصاميم سوشيال ميديا 13" src="assets/social/s2-28.jpg" loading="lazy" /></a>
+        <a href="assets/social/s3-10.jpg" class="عنصر-معرض"><img alt="تصاميم سوشيال ميديا 14" src="assets/social/s3-10.jpg" loading="lazy" /></a>
+        <a href="assets/social/s3-31.jpg" class="عنصر-معرض"><img alt="تصاميم سوشيال ميديا 15" src="assets/social/s3-31.jpg" loading="lazy" /></a>
+        <a href="assets/social/s3-33.jpg" class="عنصر-معرض"><img alt="تصاميم سوشيال ميديا 16" src="assets/social/s3-33.jpg" loading="lazy" /></a>
+        <a href="assets/social/s3-37.jpg" class="عنصر-معرض"><img alt="تصاميم سوشيال ميديا 17" src="assets/social/s3-37.jpg" loading="lazy" /></a>
+        <a href="assets/social/s4-03.jpg" class="عنصر-معرض"><img alt="تصاميم سوشيال ميديا 18" src="assets/social/s4-03.jpg" loading="lazy" /></a>
+        <a href="assets/social/s4-10.jpg" class="عنصر-معرض"><img alt="تصاميم سوشيال ميديا 19" src="assets/social/s4-10.jpg" loading="lazy" /></a>
+        <a href="assets/social/s4-29.jpg" class="عنصر-معرض"><img alt="تصاميم سوشيال ميديا 20" src="assets/social/s4-29.jpg" loading="lazy" /></a>
+        <a href="assets/social/s4-34.jpg" class="عنصر-معرض"><img alt="تصاميم سوشيال ميديا 21" src="assets/social/s4-34.jpg" loading="lazy" /></a>
+        <a href="assets/social/s5-05.jpg" class="عنصر-معرض"><img alt="تصاميم سوشيال ميديا 22" src="assets/social/s5-05.jpg" loading="lazy" /></a>
+        <a href="assets/social/s5-06.jpg" class="عنصر-معرض"><img alt="تصاميم سوشيال ميديا 23" src="assets/social/s5-06.jpg" loading="lazy" /></a>
+        <a href="assets/social/s5-07.jpg" class="عنصر-معرض"><img alt="تصاميم سوشيال ميديا 24" src="assets/social/s5-07.jpg" loading="lazy" /></a>
+      </div>
+      <div class="غلاف-المزيد">
+        <button type="button" class="زر زر-ثانوي زر-المزيد" data-more-for=".معرض-صور" data-more-limit="6">عرض المزيد</button>
+      </div>
+    </section>
+
+    <section id="تصاميم-ترويجية" class="قسم إظهار">
+      <div class="رأس-قسم">
+        <h2>تصاميم ترويجية</h2>
+        <p class="نص-هادئ">مواد دعائية وترويجية للعلامات</p>
+      </div>
+      <div class="معرض-صور">
+        <a href="assets/promo/21-16.jpg" class="عنصر-معرض"><img alt="تصاميم ترويجية 1" src="assets/promo/21-16.jpg" loading="lazy" /></a>
+        <a href="assets/promo/22-16.jpg" class="عنصر-معرض"><img alt="تصاميم ترويجية 2" src="assets/promo/22-16.jpg" loading="lazy" /></a>
+        <a href="assets/promo/22-17.jpg" class="عنصر-معرض"><img alt="تصاميم ترويجية 3" src="assets/promo/22-17.jpg" loading="lazy" /></a>
+        <a href="assets/promo/23-19.jpg" class="عنصر-معرض"><img alt="تصاميم ترويجية 4" src="assets/promo/23-19.jpg" loading="lazy" /></a>
+        <a href="assets/promo/25-16.jpg" class="عنصر-معرض"><img alt="تصاميم ترويجية 5" src="assets/promo/25-16.jpg" loading="lazy" /></a>
+        <a href="assets/promo/27-18.jpg" class="عنصر-معرض"><img alt="تصاميم ترويجية 6" src="assets/promo/27-18.jpg" loading="lazy" /></a>
+        <a href="assets/promo/30-15.jpg" class="عنصر-معرض"><img alt="تصاميم ترويجية 7" src="assets/promo/30-15.jpg" loading="lazy" /></a>
+        <a href="assets/promo/gpt20-16.jpg" class="عنصر-معرض"><img alt="تصاميم ترويجية 8" src="assets/promo/gpt20-16.jpg" loading="lazy" /></a>
+        <a href="assets/promo/gpt20-17.jpg" class="عنصر-معرض"><img alt="تصاميم ترويجية 9" src="assets/promo/gpt20-17.jpg" loading="lazy" /></a>
+        <a href="assets/promo/gpt20-21.jpg" class="عنصر-معرض"><img alt="تصاميم ترويجية 10" src="assets/promo/gpt20-21.jpg" loading="lazy" /></a>
+        <a href="assets/promo/s2-22.jpg" class="عنصر-معرض"><img alt="تصاميم ترويجية 11" src="assets/promo/s2-22.jpg" loading="lazy" /></a>
+        <a href="assets/promo/s2-23.jpg" class="عنصر-معرض"><img alt="تصاميم ترويجية 12" src="assets/promo/s2-23.jpg" loading="lazy" /></a>
+      </div>
+      <div class="غلاف-المزيد">
+        <button type="button" class="زر زر-ثانوي زر-المزيد" data-more-for=".معرض-صور" data-more-limit="6">عرض المزيد</button>
+      </div>
+    </section>
+
+    <section id="تصاميم-المواقع" class="قسم إظهار">
+      <div class="رأس-قسم">
+        <h2>تصاميم المواقع</h2>
+        <p class="نص-هادئ">إعلانات وتصاميم ويب</p>
+      </div>
+      <div class="معرض-صور">
+        <a href="assets/websites/website-01.jpg" class="عنصر-معرض"><img alt="تصاميم المواقع 1" src="assets/websites/website-01.jpg" loading="lazy" /></a>
+        <a href="assets/websites/website-02.jpg" class="عنصر-معرض"><img alt="تصاميم المواقع 2" src="assets/websites/website-02.jpg" loading="lazy" /></a>
+        <a href="assets/websites/website-03.jpg" class="عنصر-معرض"><img alt="تصاميم المواقع 3" src="assets/websites/website-03.jpg" loading="lazy" /></a>
+        <a href="assets/websites/website-04.jpg" class="عنصر-معرض"><img alt="تصاميم المواقع 4" src="assets/websites/website-04.jpg" loading="lazy" /></a>
+        <a href="assets/websites/website-05.jpg" class="عنصر-معرض"><img alt="تصاميم المواقع 5" src="assets/websites/website-05.jpg" loading="lazy" /></a>
+        <a href="assets/websites/website-06.jpg" class="عنصر-معرض"><img alt="تصاميم المواقع 6" src="assets/websites/website-06.jpg" loading="lazy" /></a>
+        <a href="assets/websites/website-07.jpg" class="عنصر-معرض"><img alt="تصاميم المواقع 7" src="assets/websites/website-07.jpg" loading="lazy" /></a>
+        <a href="assets/websites/website-08.jpg" class="عنصر-معرض"><img alt="تصاميم المواقع 8" src="assets/websites/website-08.jpg" loading="lazy" /></a>
+        <a href="assets/websites/website-09.jpg" class="عنصر-معرض"><img alt="تصاميم المواقع 9" src="assets/websites/website-09.jpg" loading="lazy" /></a>
+        <a href="assets/websites/website-10.jpg" class="عنصر-معرض"><img alt="تصاميم المواقع 10" src="assets/websites/website-10.jpg" loading="lazy" /></a>
+        <a href="assets/websites/website-11.jpg" class="عنصر-معرض"><img alt="تصاميم المواقع 11" src="assets/websites/website-11.jpg" loading="lazy" /></a>
+        <a href="assets/websites/website-12.jpg" class="عنصر-معرض"><img alt="تصاميم المواقع 12" src="assets/websites/website-12.jpg" loading="lazy" /></a>
+      </div>
+      <div class="غلاف-المزيد">
+        <button type="button" class="زر زر-ثانوي زر-المزيد" data-more-for=".معرض-صور" data-more-limit="6">عرض المزيد</button>
+      </div>
+    </section>
+
+    <section id="تصاميم-المنتجات" class="قسم إظهار">
+      <div class="رأس-قسم">
+        <h2>تصاميم المنتجات</h2>
+        <p class="نص-هادئ">تصاميم منتجات وهدايا دعائية</p>
+      </div>
+      <div class="معرض-صور">
+        <a href="assets/products/product-01.jpg" class="عنصر-معرض"><img alt="تصاميم المنتجات 1" src="assets/products/product-01.jpg" loading="lazy" /></a>
+        <a href="assets/products/product-02.jpg" class="عنصر-معرض"><img alt="تصاميم المنتجات 2" src="assets/products/product-02.jpg" loading="lazy" /></a>
+        <a href="assets/products/product-03.jpg" class="عنصر-معرض"><img alt="تصاميم المنتجات 3" src="assets/products/product-03.jpg" loading="lazy" /></a>
+        <a href="assets/products/product-04.jpg" class="عنصر-معرض"><img alt="تصاميم المنتجات 4" src="assets/products/product-04.jpg" loading="lazy" /></a>
+        <a href="assets/products/product-05.jpg" class="عنصر-معرض"><img alt="تصاميم المنتجات 5" src="assets/products/product-05.jpg" loading="lazy" /></a>
+        <a href="assets/products/product-06.jpg" class="عنصر-معرض"><img alt="تصاميم المنتجات 6" src="assets/products/product-06.jpg" loading="lazy" /></a>
+        <a href="assets/products/product-07.jpg" class="عنصر-معرض"><img alt="تصاميم المنتجات 7" src="assets/products/product-07.jpg" loading="lazy" /></a>
+        <a href="assets/products/product-08.jpg" class="عنصر-معرض"><img alt="تصاميم المنتجات 8" src="assets/products/product-08.jpg" loading="lazy" /></a>
+        <a href="assets/products/product-09.jpg" class="عنصر-معرض"><img alt="تصاميم المنتجات 9" src="assets/products/product-09.jpg" loading="lazy" /></a>
+        <a href="assets/products/product-10.jpg" class="عنصر-معرض"><img alt="تصاميم المنتجات 10" src="assets/products/product-10.jpg" loading="lazy" /></a>
+        <a href="assets/products/product-11.jpg" class="عنصر-معرض"><img alt="تصاميم المنتجات 11" src="assets/products/product-11.jpg" loading="lazy" /></a>
+        <a href="assets/products/product-12.jpg" class="عنصر-معرض"><img alt="تصاميم المنتجات 12" src="assets/products/product-12.jpg" loading="lazy" /></a>
+      </div>
+      <div class="غلاف-المزيد">
+        <button type="button" class="زر زر-ثانوي زر-المزيد" data-more-for=".معرض-صور" data-more-limit="6">عرض المزيد</button>
+      </div>
+    </section>
+
+        <section id="تصاميم-الفيديوهات" class="قسم إظهار">
+      <div class="رأس-قسم">
+        <h2>تصاميم الفيديوهات</h2>
+        <p class="نص-هادئ">عروض موشن وفيديو</p>
+      </div>
+      <div class="شبكة-فيديو">
+        <article class="بطاقة-فيديو">
+          <div class="إطار-فيديو">
+            <video controls playsinline preload="none" controlslist="nodownload noplaybackrate" src="assets/videos/1.mp4" poster="assets/video-poster.svg">
+            متصفحك لا يدعم تشغيل الفيديو.
+          </video>
+          </div>
+          <p class="عنوان-فيديو">
+            <span>فيديو 1</span>
+            <span class="شارة-فيديو">HD</span>
+          </p>
+        </article>
+        <article class="بطاقة-فيديو">
+          <div class="إطار-فيديو">
+            <video controls playsinline preload="none" controlslist="nodownload noplaybackrate" src="assets/videos/2.mp4" poster="assets/video-poster.svg">
+            متصفحك لا يدعم تشغيل الفيديو.
+          </video>
+          </div>
+          <p class="عنوان-فيديو">
+            <span>فيديو 2</span>
+            <span class="شارة-فيديو">HD</span>
+          </p>
+        </article>
+        <article class="بطاقة-فيديو">
+          <div class="إطار-فيديو">
+            <video controls playsinline preload="none" controlslist="nodownload noplaybackrate" src="assets/videos/3.mp4" poster="assets/video-poster.svg">
+            متصفحك لا يدعم تشغيل الفيديو.
+          </video>
+          </div>
+          <p class="عنوان-فيديو">
+            <span>فيديو 3</span>
+            <span class="شارة-فيديو">HD</span>
+          </p>
+        </article>
+        <article class="بطاقة-فيديو">
+          <div class="إطار-فيديو">
+            <video controls playsinline preload="none" controlslist="nodownload noplaybackrate" src="assets/videos/4.mp4" poster="assets/video-poster.svg">
+            متصفحك لا يدعم تشغيل الفيديو.
+          </video>
+          </div>
+          <p class="عنوان-فيديو">
+            <span>فيديو 4</span>
+            <span class="شارة-فيديو">HD</span>
+          </p>
+        </article>
+        <article class="بطاقة-فيديو">
+          <div class="إطار-فيديو">
+            <video controls playsinline preload="none" controlslist="nodownload noplaybackrate" src="assets/videos/5.mp4" poster="assets/video-poster.svg">
+            متصفحك لا يدعم تشغيل الفيديو.
+          </video>
+          </div>
+          <p class="عنوان-فيديو">
+            <span>فيديو 5</span>
+            <span class="شارة-فيديو">HD</span>
+          </p>
+        </article>
+        <article class="بطاقة-فيديو">
+          <div class="إطار-فيديو">
+            <video controls playsinline preload="none" controlslist="nodownload noplaybackrate" src="assets/videos/6.mp4" poster="assets/video-poster.svg">
+            متصفحك لا يدعم تشغيل الفيديو.
+          </video>
+          </div>
+          <p class="عنوان-فيديو">
+            <span>فيديو 6</span>
+            <span class="شارة-فيديو">HD</span>
+          </p>
+        </article>
+        <article class="بطاقة-فيديو">
+          <div class="إطار-فيديو">
+            <video controls playsinline preload="none" controlslist="nodownload noplaybackrate" src="assets/videos/7.mp4" poster="assets/video-poster.svg">
+            متصفحك لا يدعم تشغيل الفيديو.
+          </video>
+          </div>
+          <p class="عنوان-فيديو">
+            <span>فيديو 7</span>
+            <span class="شارة-فيديو">HD</span>
+          </p>
+        </article>
+        <article class="بطاقة-فيديو">
+          <div class="إطار-فيديو">
+            <video controls playsinline preload="none" controlslist="nodownload noplaybackrate" src="assets/videos/8.mp4" poster="assets/video-poster.svg">
+            متصفحك لا يدعم تشغيل الفيديو.
+          </video>
+          </div>
+          <p class="عنوان-فيديو">
+            <span>فيديو 8</span>
+            <span class="شارة-فيديو">HD</span>
+          </p>
+        </article>
+        <article class="بطاقة-فيديو">
+          <div class="إطار-فيديو">
+            <video controls playsinline preload="none" controlslist="nodownload noplaybackrate" src="assets/videos/9.mp4" poster="assets/video-poster.svg">
+            متصفحك لا يدعم تشغيل الفيديو.
+          </video>
+          </div>
+          <p class="عنوان-فيديو">
+            <span>فيديو 9</span>
+            <span class="شارة-فيديو">HD</span>
+          </p>
+        </article>
+        <article class="بطاقة-فيديو">
+          <div class="إطار-فيديو">
+            <video controls playsinline preload="none" controlslist="nodownload noplaybackrate" src="assets/videos/10.mp4" poster="assets/video-poster.svg">
+            متصفحك لا يدعم تشغيل الفيديو.
+          </video>
+          </div>
+          <p class="عنوان-فيديو">
+            <span>فيديو 10</span>
+            <span class="شارة-فيديو">HD</span>
+          </p>
+        </article>
+        <article class="بطاقة-فيديو">
+          <div class="إطار-فيديو">
+            <video controls playsinline preload="none" controlslist="nodownload noplaybackrate" src="assets/videos/11.mp4" poster="assets/video-poster.svg">
+            متصفحك لا يدعم تشغيل الفيديو.
+          </video>
+          </div>
+          <p class="عنوان-فيديو">
+            <span>فيديو 11</span>
+            <span class="شارة-فيديو">HD</span>
+          </p>
+        </article>
+        <article class="بطاقة-فيديو">
+          <div class="إطار-فيديو">
+            <video controls playsinline preload="none" controlslist="nodownload noplaybackrate" src="assets/videos/12.mp4" poster="assets/video-poster.svg">
+            متصفحك لا يدعم تشغيل الفيديو.
+          </video>
+          </div>
+          <p class="عنوان-فيديو">
+            <span>فيديو 12</span>
+            <span class="شارة-فيديو">HD</span>
+          </p>
+        </article>
+      </div>
+      <div class="غلاف-المزيد">
+        <button type="button" class="زر زر-ثانوي زر-المزيد" data-more-for=".شبكة-فيديو" data-more-limit="3">عرض المزيد</button>
+      </div>
+    </section>
+
+    <section id="التواصل" class="قسم إظهار">
+      <div class="رأس-قسم">
+        <h2>التواصل</h2>
+        
+      </div>
+      <div class="لوحة-تواصل">
+        <div class="صف-تواصل">
+          <span class="تسمية-تواصل">الموقع</span>
+          <span class="قيمة-تواصل">جدة، المملكة العربية السعودية</span>
+        </div>
+        <div class="صف-تواصل">
+          <span class="تسمية-تواصل">الجوال</span>
+          <a class="قيمة-تواصل رابط-تواصل" href="https://wa.me/966572469285" target="_blank" rel="noreferrer">+966 57 246 9285</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a
+    class="واتساب-عائم"
+    href="https://wa.me/966572469285"
+    target="_blank"
+    rel="noreferrer"
+    aria-label="تواصل عبر واتساب"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <div class="عارض-صور" id="عارض-صور" aria-hidden="true">
+    <button type="button" class="زر-عارض إغلاق-عارض" aria-label="إغلاق">×</button>
+    <button type="button" class="زر-عارض عارض-سابق" aria-label="السابق">‹</button>
+    <img alt="" />
+    <button type="button" class="زر-عارض عارض-تالي" aria-label="التالي">›</button>
+  </div>
+
+  <footer>
+    <p>© <span id="السنة"></span> ماجد مسعد العمراني - جميع الحقوق محفوظة</p>
+  </footer>
+
+  <script>
+    document.getElementById("السنة").textContent = new Date().getFullYear();
+
+    (function () {
+      const العارض = document.getElementById("عارض-صور");
+      if (!العارض) return;
+
+      const صورة = العارض.querySelector("img");
+      const زر_إغلاق = العارض.querySelector(".إغلاق-عارض");
+      const زر_سابق = العارض.querySelector(".عارض-سابق");
+      const زر_تالي = العارض.querySelector(".عارض-تالي");
+      let العناصر = [];
+      let المؤشر = 0;
+
+      const فتح = (قائمة, فهرس) => {
+        العناصر = قائمة;
+        المؤشر = فهرس;
+        عرض();
+        العارض.classList.add("مفتوح");
+        العارض.setAttribute("aria-hidden", "false");
+        document.body.classList.add("عارض-نشط");
+      };
+
+      const إغلاق = () => {
+        العارض.classList.remove("مفتوح");
+        العارض.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("عارض-نشط");
+        صورة.removeAttribute("src");
+        صورة.alt = "";
+      };
+
+      const عرض = () => {
+        const رابط = العناصر[المؤشر];
+        if (!رابط) return;
+        const مصدر = رابط.getAttribute("href");
+        const صورة_مصغرة = رابط.querySelector("img");
+        صورة.src = مصدر;
+        صورة.alt = صورة_مصغرة ? صورة_مصغرة.alt : "";
+      };
+
+      const تنقل = (خطوة) => {
+        if (!العناصر.length) return;
+        المؤشر = (المؤشر + خطوة + العناصر.length) % العناصر.length;
+        عرض();
+      };
+
+      document.querySelectorAll(".معرض-صور").forEach((معرض) => {
+        const الروابط = [...معرض.querySelectorAll("a[href]")];
+        الروابط.forEach((رابط, فهرس) => {
+          رابط.addEventListener("click", (حدث) => {
+            حدث.preventDefault();
+            فتح(الروابط, فهرس);
+          });
+        });
+      });
+
+      زر_إغلاق.addEventListener("click", إغلاق);
+      زر_سابق.addEventListener("click", () => تنقل(-1));
+      زر_تالي.addEventListener("click", () => تنقل(1));
+
+      العارض.addEventListener("click", (حدث) => {
+        if (حدث.target === العارض) إغلاق();
+      });
+
+      document.addEventListener("keydown", (حدث) => {
+        if (!العارض.classList.contains("مفتوح")) return;
+        if (حدث.key === "Escape") إغلاق();
+        if (حدث.key === "ArrowRight") تنقل(-1);
+        if (حدث.key === "ArrowLeft") تنقل(1);
+      });
+    })();
+
+
+    const روابط_داخلية = document.querySelectorAll('a[href^="#"]');
+    روابط_داخلية.forEach((رابط) => {
+      رابط.addEventListener("click", (حدث) => {
+        const المعرف = رابط.getAttribute("href");
+        if (!المعرف || المعرف === "#") return;
+
+        const القسم = document.querySelector(المعرف);
+        if (!القسم) return;
+
+        حدث.preventDefault();
+        const الشريط = document.querySelector(".شريط");
+        const ازاحة = الشريط ? الشريط.offsetHeight + 28 : 28;
+        const موضع = القسم.getBoundingClientRect().top + window.scrollY - ازاحة;
+
+        window.scrollTo({
+          top: موضع,
+          behavior: "smooth"
+        });
+      });
+    });
+
+    const العناصر = document.querySelectorAll(".إظهار");
+    const المراقب = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("ظهر");
+          المراقب.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: "0px 0px -40px 0px" });
+
+    العناصر.forEach((item, index) => {
+      item.style.transitionDelay = `${Math.min(index * 50, 300)}ms`;
+      المراقب.observe(item);
+    });
+
+    // Ensure sections become visible even if observer misses tall blocks
+    window.setTimeout(() => {
+      document.querySelectorAll(".إظهار:not(.ظهر)").forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          el.classList.add("ظهر");
+        }
+      });
+    }, 400);
+
+
+    document.querySelectorAll(".بطاقة-فيديو video").forEach((فيديو) => {
+      const إطار = فيديو.closest(".إطار-فيديو");
+      if (!إطار) return;
+
+      const تحديث = () => {
+        if (!فيديو.paused && !فيديو.ended) إطار.classList.add("يعمل");
+        else إطار.classList.remove("يعمل");
+      };
+
+      فيديو.addEventListener("play", تحديث);
+      فيديو.addEventListener("pause", تحديث);
+      فيديو.addEventListener("ended", تحديث);
+
+      فيديو.addEventListener("click", (حدث) => {
+        const حدود = فيديو.getBoundingClientRect();
+        // Keep native controls clickable at the bottom
+        if (حدث.clientY > حدود.bottom - 56) return;
+
+        حدث.preventDefault();
+        if (فيديو.paused) {
+          فيديو.play().catch(() => {});
+        } else {
+          فيديو.pause();
+        }
+      });
+    });
+
+    document.querySelectorAll(".زر-المزيد").forEach((زر) => {
+      const القسم = زر.closest("section");
+      const الشبكة = القسم && القسم.querySelector(زر.dataset.moreFor || ".معرض-صور, .شبكة-فيديو");
+      if (!الشبكة) {
+        زر.closest(".غلاف-المزيد")?.remove();
+        return;
+      }
+
+      const الحد = Number(زر.dataset.moreLimit || 6);
+      const العناصر_المخفية = الشبكة.children.length > الحد;
+      if (!العناصر_المخفية) {
+        زر.closest(".غلاف-المزيد")?.remove();
+        return;
+      }
+
+      زر.addEventListener("click", () => {
+        const موسع = الشبكة.classList.toggle("موسع");
+        زر.textContent = موسع ? "عرض أقل" : "عرض المزيد";
+        if (موسع) {
+          الشبكة.querySelectorAll("video[preload='none']").forEach((فيديو) => {
+            if (!فيديو.getAttribute("src") && فيديو.dataset.src) {
+              فيديو.src = فيديو.dataset.src;
+            }
+          });
+        }
+      });
+    });
+
+    const أزرار_التبويب = document.querySelectorAll(".زر-تبويب");
+    const لوحات_التبويب = document.querySelectorAll(".لوحة-تبويب");
+
+    أزرار_التبويب.forEach((زر) => {
+      زر.addEventListener("click", () => {
+        const الهدف = زر.dataset.tabTarget;
+        if (!الهدف) return;
+
+        أزرار_التبويب.forEach((z) => {
+          z.classList.remove("نشط");
+          z.setAttribute("aria-selected", "false");
+        });
+        لوحات_التبويب.forEach((p) => p.classList.remove("نشط"));
+
+        زر.classList.add("نشط");
+        زر.setAttribute("aria-selected", "true");
+        const لوحة = document.getElementById(الهدف);
+        if (لوحة) لوحة.classList.add("نشط");
+      });
+    });
+  </script>
+</body>
+</html>
