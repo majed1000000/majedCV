@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>الملف الشخصي</title>
-  <meta name="description" content="ملف شخصي عربي بتصميم بصري سينمائي وحركة سلسة." />
+  <title>الملف الشخصي | ماجد مسعد العمراني</title>
+  <meta name="description" content="ملف شخصي عربي بتصميم بصري سينمائي وحركة سلسة يعرض خدمات التصميم والجرافيك." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -277,20 +277,6 @@
       background: rgba(255, 255, 255, 0.08);
     }
 
-    .زر-واتساب {
-      background: linear-gradient(135deg, #25d366, #1ebe5b);
-      color: #ffffff;
-      border-color: rgba(255, 255, 255, 0.18);
-      box-shadow: 0 10px 26px rgba(37, 211, 102, 0.3);
-      min-width: 220px;
-    }
-
-    .زر-واتساب:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 30px rgba(37, 211, 102, 0.38);
-      filter: saturate(1.05);
-    }
-
     .واتساب-عائم {
       position: fixed;
       left: 1.25rem;
@@ -445,21 +431,6 @@
       box-shadow: 0 14px 35px rgba(10, 16, 30, 0.38);
     }
 
-    .صورة-رمزية {
-      height: 160px;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .صورة-رمزية::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 30%, rgba(9, 12, 20, 0.72) 100%);
-    }
-
     .محتوى-بطاقة {
       padding: 1rem;
     }
@@ -467,44 +438,6 @@
     .محتوى-بطاقة h3 {
       margin-bottom: 0.4rem;
       font-size: 1.08rem;
-    }
-
-    .إحصاءات {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      margin-top: 1rem;
-    }
-
-    .رقم {
-      border: 1px solid var(--حدود);
-      border-radius: 14px;
-      padding: 1rem;
-      background: var(--سطح);
-      text-align: center;
-    }
-
-    .رقم strong {
-      display: block;
-      font-size: 1.6rem;
-      line-height: 1.2;
-      margin-bottom: 0.2rem;
-      color: #dff7ff;
-    }
-
-    .سؤال {
-      border-top: 1px solid var(--حدود);
-      padding: 0.95rem 0;
-    }
-
-    .سؤال:first-of-type {
-      border-top: none;
-    }
-
-    .سؤال h3 {
-      margin-bottom: 0.35rem;
-      font-size: 1.03rem;
-      color: #e8efff;
     }
 
     .معرض-صور {
@@ -751,7 +684,7 @@
       </div>
       <div class="أزرار">
         <a class="زر زر-أساسي" href="#معرض-الصور">استعرض الملف</a>
-        <a class="زر زر-ثانوي" _blank href="https://wa.me/966572469285">اطلب خدمتك الآن</a>
+        <a class="زر زر-ثانوي" target="_blank" href="https://wa.me/966572469285">اطلب خدمتك الآن</a>
       </div>
     </section>
 
@@ -784,36 +717,31 @@
       </div>
     </section>
 
-
     <section id="معرض-الصور" class="قسم إظهار">
       <div class="رأس-قسم">
         <h2>معرض الصور</h2>
-        
       </div>
       <div class="معرض-صور">
-        <a target="_blank" rel="noopener noreferrer" href="https://private-user-images.githubusercontent.com/299589126/616941531-2ce3a7e4-e59e-4add-82b3-cc33b11008e2.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODM1NDM1NjgsIm5iZiI6MTc4MzU0MzI2OCwicGF0aCI6Ii8yOTk1ODkxMjYvNjE2OTQxNTMxLTJjZTNhN2U0LWU1OWUtNGFkZC04MmIzLWNjMzNiMTEwMDhlMi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcwOFQyMDQxMDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xNzUzNWViMDhhNTZjYjJkMDQ5MDlkODUxZGZhZmE4NjVlODFlZmI3OWNiYTY0YjYzYzljYzRiZGZlMGViM2JiJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.aWYK9XW3iZbsJp1VGCVoYLmEq0J7PMQzy-jLyrG5aIo"><img alt="" src="https://private-user-images.githubusercontent.com/299589126/616941531-2ce3a7e4-e59e-4add-82b3-cc33b11008e2.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODM1NDM1NjgsIm5iZiI6MTc4MzU0MzI2OCwicGF0aCI6Ii8yOTk1ODkxMjYvNjE2OTQxNTMxLTJjZTNhN2U0LWU1OWUtNGFkZC04MmIzLWNjMzNiMTEwMDhlMi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcwOFQyMDQxMDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xNzUzNWViMDhhNTZjYjJkMDQ5MDlkODUxZGZhZmE4NjVlODFlZmI3OWNiYTY0YjYzYzljYzRiZGZlMGViM2JiJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.aWYK9XW3iZbsJp1VGCVoYLmEq0J7PMQzy-jLyrG5aIo" /></a>
-        <a target="_blank" rel="noopener noreferrer" href="https://private-user-images.githubusercontent.com/299589126/616941523-9970af00-61c1-4c75-be37-0b90a2c3767d.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODM1NDM1NjgsIm5iZiI6MTc4MzU0MzI2OCwicGF0aCI6Ii8yOTk1ODkxMjYvNjE2OTQxNTIzLTk5NzBhZjAwLTYxYzEtNGM3NS1iZTM3LTBiOTBhMmMzNzY3ZC5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcwOFQyMDQxMDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jMjRlNWI2MmZmMTg3MjdhZmI3NjFkYTMxZWQ5YjVkNGFjNDlmMDM3YzFlOTY3N2YzMjFmMDM2YTViZTg0OTkyJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.9RWXNMAM5xniHo0tEuTYAzO888aLSNE4UdGrH0Q593w"><img alt="" src="https://private-user-images.githubusercontent.com/299589126/616941523-9970af00-61c1-4c75-be37-0b90a2c3767d.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODM1NDM1NjgsIm5iZiI6MTc4MzU0MzI2OCwicGF0aCI6Ii8yOTk1ODkxMjYvNjE2OTQxNTIzLTk5NzBhZjAwLTYxYzEtNGM3NS1iZTM3LTBiOTBhMmMzNzY3ZC5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcwOFQyMDQxMDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jMjRlNWI2MmZmMTg3MjdhZmI3NjFkYTMxZWQ5YjVkNGFjNDlmMDM3YzFlOTY3N2YzMjFmMDM2YTViZTg0OTkyJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.9RWXNMAM5xniHo0tEuTYAzO888aLSNE4UdGrH0Q593w" /></a>
-        <a target="_blank" rel="noopener noreferrer" href="https://private-user-images.githubusercontent.com/299589126/616941516-60a11888-b911-4b28-a583-f731e86f1784.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODM1NDM1NjgsIm5iZiI6MTc4MzU0MzI2OCwicGF0aCI6Ii8yOTk1ODkxMjYvNjE2OTQxNTE2LTYwYTExODg4LWI5MTEtNGIyOC1hNTgzLWY3MzFlODZmMTc4NC5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcwOFQyMDQxMDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0wNmJlZGZkYzIxMjdiYTVjMmJlN2U2NmZlMGQ0YjVjZDAwMDg4NjExNzcyMDE3OTQ2ZGQ3MmRmMTI3ZDU1MDZhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.7bzIVStzPFJ5RxZZ3-fm-MnotTdqQaGncQKKDLqoWao"><img alt="" src="https://private-user-images.githubusercontent.com/299589126/616941516-60a11888-b911-4b28-a583-f731e86f1784.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODM1NDM1NjgsIm5iZiI6MTc4MzU0MzI2OCwicGF0aCI6Ii8yOTk1ODkxMjYvNjE2OTQxNTE2LTYwYTExODg4LWI5MTEtNGIyOC1hNTgzLWY3MzFlODZmMTc4NC5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcwOFQyMDQxMDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0wNmJlZGZkYzIxMjdiYTVjMmJlN2U2NmZlMGQ0YjVjZDAwMDg4NjExNzcyMDE3OTQ2ZGQ3MmRmMTI3ZDU1MDZhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.7bzIVStzPFJ5RxZZ3-fm-MnotTdqQaGncQKKDLqoWao" /></a>
-        <a target="_blank" rel="noopener noreferrer" href="https://private-user-images.githubusercontent.com/299589126/616941507-c700e82d-6e32-4ac1-8490-4324b8662d0b.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODM1NDM1NjgsIm5iZiI6MTc4MzU0MzI2OCwicGF0aCI6Ii8yOTk1ODkxMjYvNjE2OTQxNTA3LWM3MDBlODJkLTZlMzItNGFjMS04NDkwLTQzMjRiODY2MmQwYi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcwOFQyMDQxMDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03YzI1ZjA5N2Y3MzJjNDI4NDU0MzU1YjlmZTFmZmU0Yjc4ZjkzYjc5ZDcyZGE2ZWZjNzJjZWZiMTBkZTU0MmE1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.sGH4ndnPvAGBx70Eb4XpfecQmEgbjgQhKkF2cRnDLn0"><img alt="" src="https://private-user-images.githubusercontent.com/299589126/616941507-c700e82d-6e32-4ac1-8490-4324b8662d0b.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODM1NDM1NjgsIm5iZiI6MTc4MzU0MzI2OCwicGF0aCI6Ii8yOTk1ODkxMjYvNjE2OTQxNTA3LWM3MDBlODJkLTZlMzItNGFjMS04NDkwLTQzMjRiODY2MmQwYi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcwOFQyMDQxMDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03YzI1ZjA5N2Y3MzJjNDI4NDU0MzU1YjlmZTFmZmU0Yjc4ZjkzYjc5ZDcyZGE2ZWZjNzJjZWZiMTBkZTU0MmE1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.sGH4ndnPvAGBx70Eb4XpfecQmEgbjgQhKkF2cRnDLn0" /></a>
-        <a target="_blank" rel="noopener noreferrer" href="https://private-user-images.githubusercontent.com/299589126/616941498-be02574d-a530-43f3-9596-8b97a249dc37.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODM1NDM1NjgsIm5iZiI6MTc4MzU0MzI2OCwicGF0aCI6Ii8yOTk1ODkxMjYvNjE2OTQxNDk4LWJlMDI1NzRkLWE1MzAtNDNmMy05NTk2LThiOTdhMjQ5ZGMzNy5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcwOFQyMDQxMDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02ZTc5YTVmNTdiZTA2OGFkMzA4OGQ3MGQ1NjJiOTAyODcyMjk0ZjIyMTcyMTgwYTY5YTk1YWM5ZDA2YmMxNDRiJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.ZPFBauMMvQ9YOiZ16uxQIsy_cKRz0MfqbNJqbHzAco0"><img alt="" src="https://private-user-images.githubusercontent.com/299589126/616941498-be02574d-a530-43f3-9596-8b97a249dc37.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODM1NDM1NjgsIm5iZiI6MTc4MzU0MzI2OCwicGF0aCI6Ii8yOTk1ODkxMjYvNjE2OTQxNDk4LWJlMDI1NzRkLWE1MzAtNDNmMy05NTk2LThiOTdhMjQ5ZGMzNy5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcwOFQyMDQxMDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02ZTc5YTVmNTdiZTA2OGFkMzA4OGQ3MGQ1NjJiOTAyODcyMjk0ZjIyMTcyMTgwYTY5YTk1YWM5ZDA2YmMxNDRiJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.ZPFBauMMvQ9YOiZ16uxQIsy_cKRz0MfqbNJqbHzAco0" /></a>
-        <a target="_blank" rel="noopener noreferrer" href="https://private-user-images.githubusercontent.com/299589126/616941493-27309919-65a0-47c3-98bd-7b056c1f2085.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODM1NDM1NjgsIm5iZiI6MTc4MzU0MzI2OCwicGF0aCI6Ii8yOTk1ODkxMjYvNjE2OTQxNDkzLTI3MzA5OTE5LTY1YTAtNDdjMy05OGJkLTdiMDU2YzFmMjA4NS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcwOFQyMDQxMDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zZmE2ODc4MzJjNTZhMjk0NTc4MGUxZmI3Y2U0YWIxYTdhNmI5ZWMzNzQ2YzU0YTg4NTUxY2NjODliYzFmY2NhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.7SbTk_SFtsZ_vyMS7r638L_ySTCpKvaZnh3RN73wqs0"><img alt="" src="https://private-user-images.githubusercontent.com/299589126/616941493-27309919-65a0-47c3-98bd-7b056c1f2085.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODM1NDM1NjgsIm5iZiI6MTc4MzU0MzI2OCwicGF0aCI6Ii8yOTk1ODkxMjYvNjE2OTQxNDkzLTI3MzA5OTE5LTY1YTAtNDdjMy05OGJkLTdiMDU2YzFmMjA4NS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcwOFQyMDQxMDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zZmE2ODc4MzJjNTZhMjk0NTc4MGUxZmI3Y2U0YWIxYTdhNmI5ZWMzNzQ2YzU0YTg4NTUxY2NjODliYzFmY2NhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.7SbTk_SFtsZ_vyMS7r638L_ySTCpKvaZnh3RN73wqs0" /></a>
+        <a target="_blank" rel="noopener noreferrer" href="assets/images/project1.jpg"><img alt="عمل ١" src="assets/images/project1.jpg" /></a>
+        <a target="_blank" rel="noopener noreferrer" href="assets/images/project2.jpg"><img alt="عمل ٢" src="assets/images/project2.jpg" /></a>
+        <a target="_blank" rel="noopener noreferrer" href="assets/images/project3.jpg"><img alt="عمل ٣" src="assets/images/project3.jpg" /></a>
+        <a target="_blank" rel="noopener noreferrer" href="assets/images/project4.jpg"><img alt="عمل ٤" src="assets/images/project4.jpg" /></a>
+        <a target="_blank" rel="noopener noreferrer" href="assets/images/project5.jpg"><img alt="عمل ٥" src="assets/images/project5.jpg" /></a>
       </div>
-  
     </section>
 
     <section id="معرض-الفيديو" class="قسم إظهار">
       <div class="رأس-قسم">
         <h2>معرض الفيديو</h2>
-        
       </div>
       <div class="شبكة-فيديو">
         <article class="بطاقة-فيديو">
           <video controls playsinline preload="metadata" controlslist="nodownload noplaybackrate">
-            <source src="https://private-user-images.githubusercontent.com/299589126/616947114-c245f1df-25f2-44dd-bc40-d960bedb1e35.mp4?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODM1NDM1NjgsIm5iZiI6MTc4MzU0MzI2OCwicGF0aCI6Ii8yOTk1ODkxMjYvNjE2OTQ3MTE0LWMyNDVmMWRmLTI1ZjItNDRkZC1iYzQwLWQ5NjBiZWRiMWUzNS5tcDQ_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcwOFQyMDQxMDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01ZWI1N2U2OWYxZTMzZjk2MmY2Y2NkYTk1MzZiYzQwN2JiMDE2Y2Q1OTQ5Y2ZmMWVmZTMzZWJjOWU2YTM0NTFhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9dmlkZW8lMkZtcDQifQ.anwQOZNpqm9cgfE_YKruU8xcSTPpLOIIvBasi12OH8U" type="video/mp4" />
+            <source src="assets/videos/motion-showcase.mp4" type="video/mp4" />
             متصفحك لا يدعم تشغيل الفيديو.
           </video>
           <p class="عنوان-فيديو">
-            <span>عرض موشن احترافي - 0044.mp4</span>
+            <span>عرض موشن احترافي</span>
             <span class="شارة-فيديو">HD</span>
           </p>
         </article>
@@ -823,7 +751,6 @@
     <section id="إعلانات-المواقع" class="قسم إظهار">
       <div class="رأس-قسم">
         <h2>إعلانات المواقع</h2>
-        
       </div>
       <div class="تبويبات" role="tablist" aria-label="تبويبات إعلانات المواقع">
         <button class="زر-تبويب نشط" type="button" role="tab" aria-selected="true" data-tab-target="ad-1">إعلان ١</button>
@@ -832,17 +759,16 @@
       </div>
       <div class="لوحات-تبويب">
         <div class="لوحة-تبويب نشط" id="ad-1" role="tabpanel">
-          <a target="_blank" rel="noopener noreferrer" href="https://private-user-images.githubusercontent.com/299589126/616950171-bbd363c9-2a91-4c68-9394-1ff42af4f93f.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODM1NDM1NjgsIm5iZiI6MTc4MzU0MzI2OCwicGF0aCI6Ii8yOTk1ODkxMjYvNjE2OTUwMTcxLWJiZDM2M2M5LTJhOTEtNGM2OC05Mzk0LTFmZjQyYWY0ZjkzZi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcwOFQyMDQxMDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kOGNiODc5NGE5NGM2YTdkNzU0Zjk5NDA2ODFkMWQyNjY0ZWNiYTRiMTVkMTJkOTk5M2I4NjcxMDgwOWI4MmMxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.b4Q4QcOLH7aAVZHPhG6ApmFhSsZ2l5WNKmd6Cvlqd3Q"><img alt="إعلان موقع 1" src="https://private-user-images.githubusercontent.com/299589126/616950171-bbd363c9-2a91-4c68-9394-1ff42af4f93f.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODM1NDM1NjgsIm5iZiI6MTc4MzU0MzI2OCwicGF0aCI6Ii8yOTk1ODkxMjYvNjE2OTUwMTcxLWJiZDM2M2M5LTJhOTEtNGM2OC05Mzk0LTFmZjQyYWY0ZjkzZi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcwOFQyMDQxMDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kOGNiODc5NGE5NGM2YTdkNzU0Zjk5NDA2ODFkMWQyNjY0ZWNiYTRiMTVkMTJkOTk5M2I4NjcxMDgwOWI4MmMxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.b4Q4QcOLH7aAVZHPhG6ApmFhSsZ2l5WNKmd6Cvlqd3Q" /></a>
+          <a target="_blank" rel="noopener noreferrer" href="assets/images/ad1.jpg"><img alt="إعلان موقع 1" src="assets/images/ad1.jpg" /></a>
         </div>
         <div class="لوحة-تبويب" id="ad-2" role="tabpanel">
-          <a target="_blank" rel="noopener noreferrer" href="https://private-user-images.githubusercontent.com/299589126/616950168-0ae16154-bfec-43ce-8796-af6c59c5bb63.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODM1NDM1NjgsIm5iZiI6MTc4MzU0MzI2OCwicGF0aCI6Ii8yOTk1ODkxMjYvNjE2OTUwMTY4LTBhZTE2MTU0LWJmZWMtNDNjZS04Nzk2LWFmNmM1OWM1YmI2My5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcwOFQyMDQxMDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1iMjAwZDI5Y2E1M2ZkZmFlMWJjNWI2NTc4ZTk1NTg1NWRiZTE2MDdhMjE0M2Y1NjAzYTMyNmVhM2ZmYTQ3NmNkJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.shbo8fsfiihhK0Hvw4VyO61AzBXs53NuTCwCvlD1_QU"><img alt="إعلان موقع 2" src="https://private-user-images.githubusercontent.com/299589126/616950168-0ae16154-bfec-43ce-8796-af6c59c5bb63.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODM1NDM1NjgsIm5iZiI6MTc4MzU0MzI2OCwicGF0aCI6Ii8yOTk1ODkxMjYvNjE2OTUwMTY4LTBhZTE2MTU0LWJmZWMtNDNjZS04Nzk2LWFmNmM1OWM1YmI2My5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcwOFQyMDQxMDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1iMjAwZDI5Y2E1M2ZkZmFlMWJjNWI2NTc4ZTk1NTg1NWRiZTE2MDdhMjE0M2Y1NjAzYTMyNmVhM2ZmYTQ3NmNkJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.shbo8fsfiihhK0Hvw4VyO61AzBXs53NuTCwCvlD1_QU" /></a>
+          <a target="_blank" rel="noopener noreferrer" href="assets/images/ad2.jpg"><img alt="إعلان موقع 2" src="assets/images/ad2.jpg" /></a>
         </div>
         <div class="لوحة-تبويب" id="ad-3" role="tabpanel">
-          <a target="_blank" rel="noopener noreferrer" href="https://private-user-images.githubusercontent.com/299589126/616950164-f432e4e0-f827-438c-9b3d-1dfaef6e8c51.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODM1NDM1NjgsIm5iZiI6MTc4MzU0MzI2OCwicGF0aCI6Ii8yOTk1ODkxMjYvNjE2OTUwMTY0LWY0MzJlNGUwLWY4MjctNDM4Yy05YjNkLTFkZmFlZjZlOGM1MS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcwOFQyMDQxMDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jM2E0Y2UzYTQyNzg3Y2QzNTc0ODQyYmE2ZjUxMTRlZTBkZTc4ZjY1ZjI0YzQ1ZDNjNTg1NTE4YmI0ZGY4ZmZlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.JQeYvMUEK-qMKtBI9oWhxgFIObwlqcrzvLWlvC1Uzk0"><img alt="إعلان موقع 3" src="https://private-user-images.githubusercontent.com/299589126/616950164-f432e4e0-f827-438c-9b3d-1dfaef6e8c51.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODM1NDM1NjgsIm5iZiI6MTc4MzU0MzI2OCwicGF0aCI6Ii8yOTk1ODkxMjYvNjE2OTUwMTY0LWY0MzJlNGUwLWY4MjctNDM4Yy05YjNkLTFkZmFlZjZlOGM1MS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcwOFQyMDQxMDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jM2E0Y2UzYTQyNzg3Y2QzNTc0ODQyYmE2ZjUxMTRlZTBkZTc4ZjY1ZjI0YzQ1ZDNjNTg1NTE4YmI0ZGY4ZmZlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.JQeYvMUEK-qMKtBI9oWhxgFIObwlqcrzvLWlvC1Uzk0" /></a>
+          <a target="_blank" rel="noopener noreferrer" href="assets/images/ad3.jpg"><img alt="إعلان موقع 3" src="assets/images/ad3.jpg" /></a>
         </div>
       </div>
     </section>
-
 
     <section id="التواصل" class="قسم إظهار">
       <div class="رأس-قسم">
@@ -862,13 +788,7 @@
     </section>
   </main>
 
-  <a
-    class="واتساب-عائم"
-    href="https://wa.me/966572469285"
-    target="_blank"
-    rel="noreferrer"
-    aria-label="تواصل عبر واتساب"
-  >
+  <a class="واتساب-عائم" href="https://wa.me/966572469285" target="_blank" rel="noreferrer" aria-label="تواصل عبر واتساب">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>
@@ -881,53 +801,31 @@
   <script>
     document.getElementById("السنة").textContent = new Date().getFullYear();
 
+    // السكربت يحمي ظهور الصور في حال لم يتم رفعها بشكل صحيح بعد
     const بدائل_الصور = [
       "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=80",
       "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1400&q=80"
+      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80"
     ];
 
     let مؤشر_بديل = 0;
-    const صور = document.querySelectorAll('img[src*="private-user-images"]');
+    const صور = document.querySelectorAll('.معرض-صور img, .لوحة-تبويب img');
     صور.forEach((صورة) => {
-      const رابط_بديل = بدائل_الصور[مؤشر_بديل % بدائل_الصور.length];
-      مؤشر_بديل += 1;
-
       صورة.addEventListener("error", () => {
+        const رابط_بديل = بدائل_الصور[مؤشر_بديل % بدائل_الصور.length];
+        مؤشر_بديل += 1;
         صورة.src = رابط_بديل;
         const حاوية_الرابط = صورة.closest("a");
-        if (حاوية_الرابط) {
-          حاوية_الرابط.href = رابط_بديل;
-        }
-      });
-
-      // إذا انتهت صلاحية الرابط قبل التحميل، نطبق البديل مباشرة.
-      if (صورة.complete && صورة.naturalWidth === 0) {
-        صورة.src = رابط_بديل;
-        const حاوية_الرابط = صورة.closest("a");
-        if (حاوية_الرابط) {
-          حاوية_الرابط.href = رابط_بديل;
-        }
-      }
-    });
-
-    const فيديوهات = document.querySelectorAll('video source[src*="private-user-images"]');
-    فيديوهات.forEach((مصدر) => {
-      مصدر.addEventListener("error", () => {
-        مصدر.src = "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4";
-        const فيديو = مصدر.closest("video");
-        if (فيديو) فيديو.load();
+        if (حاوية_الرابط) حاوية_الرابط.href = رابط_بديل;
       });
     });
 
+    // التنقل السلس والتبويبات المخصصة
     const روابط_داخلية = document.querySelectorAll('a[href^="#"]');
     روابط_داخلية.forEach((رابط) => {
       رابط.addEventListener("click", (حدث) => {
         const المعرف = رابط.getAttribute("href");
         if (!المعرف || المعرف === "#") return;
-
         const القسم = document.querySelector(المعرف);
         if (!القسم) return;
 
@@ -936,10 +834,7 @@
         const ازاحة = الشريط ? الشريط.offsetHeight + 28 : 28;
         const موضع = القسم.getBoundingClientRect().top + window.scrollY - ازاحة;
 
-        window.scrollTo({
-          top: موضع,
-          behavior: "smooth"
-        });
+        window.scrollTo({ top: موضع, behavior: "smooth" });
       });
     });
 
@@ -951,10 +846,10 @@
           المراقب.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.1 });
 
     العناصر.forEach((item, index) => {
-      item.style.transitionDelay = `${index * 70}ms`;
+      item.style.transitionDelay = `${index * 50}ms`;
       المراقب.observe(item);
     });
 
